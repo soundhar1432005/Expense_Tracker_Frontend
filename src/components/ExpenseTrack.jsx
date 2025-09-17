@@ -13,7 +13,7 @@ export default function ExpenseTrack() {
   const [itemToEdit, setItemToEdit] = useState(null); 
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/api/")
+    axios.get("https://expense-tracker-backend-06iy.onrender.com/api/")
     .then((res)=>setExpenses(res.data))
   },[]
 )
@@ -60,10 +60,10 @@ export default function ExpenseTrack() {
     setExpenses(updated);
     setItemToEdit(null);
 
-    await axios.put(`http://localhost:3001/api/${id}`, { title, amount });
+    await axios.put(`https://expense-tracker-backend-06iy.onrender.com/api/${id}`, { title, amount });
   } else {
     // Add new
-    const res = await axios.post("http://localhost:3001/api/", {
+    const res = await axios.post("https://expense-tracker-backend-06iy.onrender.com/api/", {
       title,
       amount: Number(amount),
     });
@@ -81,7 +81,7 @@ export default function ExpenseTrack() {
   */
  const deleteExpenses = async (id) => {
   try {
-    await axios.delete(`http://localhost:3001/api/${id}`);
+    await axios.delete(`https://expense-tracker-backend-06iy.onrender.com/api/${id}`);
     const updatedExpenses = expenses.filter((expense) => expense._id !== id);
     setExpenses(updatedExpenses);
   } catch (err) {
