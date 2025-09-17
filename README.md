@@ -1,3 +1,7 @@
+REACT project 
+
+
+
 comments for run frontend:
 to run your react file:
 
@@ -7,6 +11,9 @@ cd *filepath*
 npm install
 npm run dev 
 
+to connect this to mongodb atlas:
+
+npm i axios // for connect to fetch data from API
 
 
 
